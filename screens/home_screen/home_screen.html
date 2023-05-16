@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="home_screen.css">
-     <script src="home_screen.js"></script> 
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbar-left">
-        <h1>Where in the world?</h1>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My Website</title>
+      <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+      <link rel="stylesheet" href="home_screen.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <nav class="navbar">
+         <div class="navbar-left">
+            <h1>Where in the world?</h1>
+         </div>
+         <div class="navbar-right">
+            <button class="dark-mode-button">
+            <img src="icons8-moon-50.png" alt="Moon icon" class="moon-icon">
+            <span class="dark-mode-text"><button class="toggle-btn" onclick="toggleDarkMode()"> Dark Mode</button></div></span>
+            </button>
+         </div>
+      </nav>
+      <div class="search-and-filter-bar-container">
+         <div class="search-bar-container">
+            <p class="p-search-bar-container">
+               <span><i class="fa fa-search" aria-hidden="true" style="padding-right: 20px;"></i></span> 
+               <input type="text" onkeyup="search()" placeholder="Search for country" autofocus />
+            </p>
+         </div>
+         <div class="filter-bar-container">
+            <select id="region-select">
+              <option value="" disabled selected style="display:none;">Filter By Region</option>
+              <option value="Africa">  Africa</option>
+              <option value="Americas">Americas</option>
+              <option value="Asia">    Asia</option>
+              <option value="Europe">  Europe</option>
+              <option value="Oceania"> Oceania</option>
+            </select>
+         </div>
+         
       </div>
-      <div class="navbar-right">
-        <button class="dark-mode-button">
-          <img src="icons8-moon-50.png" alt="Moon icon" class="moon-icon">
-          <span class="dark-mode-text">Dark Mode</span>
-        </button>
+      <div class="margin-l-r">
+         <div id="countries-container"></div>
+         <!-- Country details modal -->
+         <div id="country-details-modal" class="modal">
+            <div class="modal-content">
+               <span class="close">&times;</span>
+               <h2 id="modal-country-name"></h2>
+               <img id="modal-flag" src="" alt="Country Flag">
+               <p><strong>Population:</strong> <span id="modal-population"></span></p>
+               <p><strong>Region:</strong> <span id="modal-region"></span></p>
+               <p><strong>Capital:</strong> <span id="modal-capital"></span></p>
+            </div>
+         </div>
       </div>
-    </nav>
-
-    <div id="countries-container"></div>
-
-<!-- Country details modal -->
-<div id="country-details-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 id="modal-country-name"></h2>
-    <img id="modal-flag" src="" alt="Country Flag">
-    <p><strong>Population:</strong> <span id="modal-population"></span></p>
-    <p><strong>Region:</strong> <span id="modal-region"></span></p>
-    <p><strong>Capital:</strong> <span id="modal-capital"></span></p>
-  </div>
-</div>
-<script src="home_screen.js"></script> 
-
-  </body>
+      <script src="home_screen.js"></script> 
+   </body>
 </html>
